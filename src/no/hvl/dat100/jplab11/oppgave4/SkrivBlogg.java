@@ -12,22 +12,19 @@ public class SkrivBlogg {
 
 		PrintWriter skriv = null;
 
-        try {
-            skriv = new PrintWriter(mappe + filnavn);
-            String streng = samling.toString();
-            skriv.write(streng);
-        }
-        catch (FileNotFoundException x) {
-            System.out.println("Filen finnes ikke!");
-        }
-        finally {
-            if (skriv != null) {
-                skriv.close();
-                return true; 
-            }
-        }
-        return false;
+		try {
+			skriv = new PrintWriter(mappe + filnavn);
+			String streng = samling.toString();
+			skriv.write(streng);
+		} catch (FileNotFoundException x) {
+			System.out.println("Filen finnes ikke!");
+		} finally {
+			if (skriv != null) {
+				skriv.close();
+				return true;
+			}
+		}
+		return false;
 
-    
 	}
 }
